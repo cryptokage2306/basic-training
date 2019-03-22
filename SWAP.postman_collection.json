@@ -1,0 +1,808 @@
+{
+	"info": {
+		"_postman_id": "8f7f441b-9110-40dc-bffd-ab85fe46006b",
+		"name": "SWAP",
+		"description": "Star Wars Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "People",
+			"item": [
+				{
+					"name": "get info of all people resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/people/",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"people",
+								""
+							]
+						},
+						"description": "get all the people resources"
+					},
+					"response": []
+				},
+				{
+					"name": "get a specific people resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/people/:id/",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"people",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search by person name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/people/?search=Luke Skywalker",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"people",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Luke Skywalker"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "A People resource is an individual person or character within the Star Wars universe."
+		},
+		{
+			"name": "Films",
+			"item": [
+				{
+					"name": "Get all films",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/films/",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"films",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Info of Specific Film",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/films/:id/",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"films",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by Title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/films/?search=A New Hope",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"films",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "A New Hope"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "A Film resource is a single film."
+		},
+		{
+			"name": "Starships",
+			"item": [
+				{
+					"name": "Get all Starships",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/starships/",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"starships",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get info of Specific Starship",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/starships/:id/",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"starships",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/starships/?search=Executor",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"starships",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Executor"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by Model",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/starships/?search=Executor-class star dreadnought",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"starships",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Executor-class star dreadnought"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "A Starship resource is a single transport craft that has hyperdrive capability."
+		},
+		{
+			"name": "Planets",
+			"item": [
+				{
+					"name": "Get all Planets info.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://swapi.co/api/planets/",
+							"protocol": "http",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Planet info.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://swapi.co/api/planets/:id/",
+							"protocol": "http",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/planets/?search=Yavin IV",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Yavin IV"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "A Planet resource is a large mass, planet or planetoid in the Star Wars Universe, at the time of 0 ABY."
+		},
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "Get All vehicle resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/vehicles/",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Vehicle Resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/vehicles/:id/",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/vehicles/?search=Sand Crawler",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Sand Crawler"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Model",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/vehicles/?search=Digger Crawler",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Digger Crawler"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "A Vehicle resource is a single transport craft that does not have hyperdrive capability."
+		},
+		{
+			"name": "Species",
+			"item": [
+				{
+					"name": "Get all Species",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/species/",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific Species Resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/species/:id/",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Species",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/species/?search=Hutt",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Hutt"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "A Species resource is a type of person or character within the Star Wars Universe."
+		},
+		{
+			"name": "Schema",
+			"item": [
+				{
+					"name": "People Schema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/people/schema",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"people",
+								"schema"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Films Schema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/films/schema",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"films",
+								"schema"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Starships Schema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/starships/schema",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"starships",
+								"schema"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicles schema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/vehicles/schema",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								"schema"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Species Schema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://swapi.co/api/planets/schema",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets",
+								"schema"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Planets Schema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Contains Schemas of all resource\n"
+		},
+		{
+			"name": "Root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://swapi.co/api/",
+					"protocol": "https",
+					"host": [
+						"swapi",
+						"co"
+					],
+					"path": [
+						"api",
+						""
+					]
+				},
+				"description": "The Root resource provides information on all available resources within the API."
+			},
+			"response": []
+		}
+	]
+}
