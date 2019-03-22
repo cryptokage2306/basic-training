@@ -746,7 +746,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://swapi.co/api/planets/schema",
+							"raw": "https://swapi.co/api/species/schema",
 							"protocol": "https",
 							"host": [
 								"swapi",
@@ -754,7 +754,7 @@
 							],
 							"path": [
 								"api",
-								"planets",
+								"species",
 								"schema"
 							]
 						}
@@ -771,7 +771,17 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": ""
+							"raw": "http://swapi.co/api/planets/schema",
+							"protocol": "http",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets",
+								"schema"
+							]
 						}
 					},
 					"response": []
