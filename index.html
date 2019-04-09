@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script>
@@ -19,11 +20,11 @@
           }
           $.ajax(settings).done(function (response) {
             console.log(response);
-            str="";
-            for(let i=0;i<response.stmt.length;i++){
-              str+=response.stmt[i]+"\n"
+            str = "";
+            for (let i = 0; i < response.stmt.length; i++) {
+              str += response.stmt[i] + "\n"
             }
-            document.getElementById('data').value=`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`;
+            document.getElementById('data').value = `${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`;
             console.log(`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`);
           });
         }
@@ -42,11 +43,11 @@
 
           $.ajax(settings).done(function (response) {
             console.log(response)
-            str="";
-            for(let i=0;i<response.stmt.length;i++){
-              str+=response.stmt[i]+"\n"
+            str = "";
+            for (let i = 0; i < response.stmt.length; i++) {
+              str += response.stmt[i] + "\n"
             }
-            document.getElementById('data').value=`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`;
+            document.getElementById('data').value = `${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`;
             console.log(`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`);
           });
         }
