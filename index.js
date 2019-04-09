@@ -34,6 +34,7 @@ app.post('/',function(req,res,next){
       "total":total,
       "sales":sales
     });
+    console.log(res.body);
     res.end();
   } if(req.headers["content-type"]=="text/plain"){
     console.log(2121212);
@@ -70,6 +71,7 @@ app.post('/',function(req,res,next){
     "total":total,
     "sales":sales
   });
+  console.log(res.body);
   res.end("hello");
 });
 app.listen(3000);

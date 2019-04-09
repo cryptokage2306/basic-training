@@ -19,6 +19,12 @@
           }
           $.ajax(settings).done(function (response) {
             console.log(response);
+            str="";
+            for(let i=0;i<response.stmt.length;i++){
+              str+=response.stmt[i]+"\n"
+            }
+            document.getElementById('data').value=`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`;
+            console.log(`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`);
           });
         }
         else {
@@ -35,7 +41,13 @@
           }
 
           $.ajax(settings).done(function (response) {
-            console.log(response);
+            console.log(response)
+            str="";
+            for(let i=0;i<response.stmt.length;i++){
+              str+=response.stmt[i]+"\n"
+            }
+            document.getElementById('data').value=`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`;
+            console.log(`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`);
           });
         }
       });
