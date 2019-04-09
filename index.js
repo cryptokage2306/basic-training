@@ -21,7 +21,6 @@ app.post('/',function(req,res,next){
     let total=0;
     let sales=0;
     console.dir(array);
-
     for (let i = 0; i < array.length; i++) {
       str.push(`${array[i].quantity} ${tax.isimported(array[i])} ${array[i].name}: ${array[i].price+tax.salestax(array[i])+tax.importtax(array[i])}`);
       sales+=tax.salestax(array[i])+tax.importtax(array[i]);
@@ -34,7 +33,6 @@ app.post('/',function(req,res,next){
       "stmt":str,
       "total":total,
       "sales":sales
-    
     });
     res.end();
   } if(req.headers["content-type"]=="text/plain"){
@@ -72,7 +70,6 @@ app.post('/',function(req,res,next){
     "total":total,
     "sales":sales
   });
-
   res.end("hello");
 });
 app.listen(3000);

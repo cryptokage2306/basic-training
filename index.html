@@ -1,0 +1,53 @@
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("input[type='button']").click(function () {
+        var radioValue = $("input[name='type']:checked").val();
+        if (radioValue == "text") {
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://localhost:3000/",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "text/plain",
+              "cache-control": "no-cache",
+            },
+            "data": document.getElementById('data').value
+          }
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+          });
+        }
+        else {
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://localhost:3000/",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json",
+              "cache-control": "no-cache",
+            },
+            "data": document.getElementById('data').value
+          }
+
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+          });
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <input type="radio" name="type" value="json" />json
+  <input type="radio" name="type" value="text" />text
+  <input type="text" name="data" id="data">
+  <input type="button" value="Get Value">
+</body>
+
+</html>

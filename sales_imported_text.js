@@ -2,8 +2,6 @@ const food=['chocolate'];
 const medical=['headache'];
 const book=['book'];
 const imported=['imported'];
-
-
 let sales_tax=function(quantity,body,price){
   for(let i=0;i<food.length;i++){
     if(body.indexOf(food[i])>-1){
