@@ -5,6 +5,14 @@ const tax=require('./sales_imported');
 const text_tax=require('./sales_imported_text');
 app.use("/",bodyParser.json());
 app.use("/",bodyParser.text())
+app.get("/", function (req, res) {
+  console.count('homepage');
+  res.sendFile('/home/asd/myapp/index.html', function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+});
 app.post('/',function(req,res,next){
   if(req.headers["content-type"]=="application/json"){
     console.log(req.headers["content-type"])
@@ -35,10 +43,9 @@ app.post('/',function(req,res,next){
   }
 },function(req,res){
   let str=req.body;
-  console.log(str);
+  console.dir(str);
   orderNo=str.split(":");
-  sentences=orderNo[1].split("\n");
-  console.dir(sentences);
+  sentences=orderNo[1].split("\\n");
   quantity=[];
   body=[];
   price=[];
