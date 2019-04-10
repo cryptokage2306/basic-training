@@ -22,10 +22,10 @@
             console.log(response);
             str = "";
             for (let i = 0; i < response.stmt.length; i++) {
-              str += response.stmt[i] + "\n"
+              str += response.stmt[i] + "<br>"
             }
-            document.getElementById('data').value = `${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`;
-            console.log(`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`);
+            document.getElementById('output').innerHTML = `<p>${response.name}:<br> ${str}Sales:${response.sales}<br>Total:${response.total}</p>`;
+            //console.log(`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`);
           });
         }
         else {
@@ -40,15 +40,14 @@
             },
             "data": document.getElementById('data').value
           }
-
           $.ajax(settings).done(function (response) {
             console.log(response)
             str = "";
             for (let i = 0; i < response.stmt.length; i++) {
-              str += response.stmt[i] + "\n"
+              str += response.stmt[i] + "<br>"
             }
-            document.getElementById('data').value = `${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`;
-            console.log(`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`);
+            document.getElementById('output').innerHTML = `<p>${response.name}:<br> ${str}Sales:${response.sales}<br>Total:${response.total}</p>`;
+            //console.log(`${response.name}:\n ${str} \n Sales:${response.sales}\n Total:${response.total}`);
           });
         }
       });
@@ -57,10 +56,12 @@
 </head>
 
 <body>
+  
   <input type="radio" name="type" value="json" />json
   <input type="radio" name="type" value="text" />text
   <input type="text" name="data" id="data">
   <input type="button" value="Get Value">
+  <p id="output" ></pid>
 </body>
 
 </html>
