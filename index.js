@@ -15,11 +15,13 @@ app.get("/",  (req, res) =>{
 });
 app.post('/',  (req, res, next) =>{
   if (req.headers["content-type"] == "application/json") {
+    console.log(req.body);
     var array = req.body.items;
     var str = []
     let total = 0;
     let sales = 0;
     for (let item of array) {
+      console.log(item);
       str.push(`${item.quantity} ${tax.isimported(item)} ${item.name}: ${item.price + tax.salestax(item) + tax.importtax(item)}`);
       sales += tax.salestax(item) + tax.importtax(item);
       total += item.price + tax.salestax(item) + tax.importtax(item);
@@ -31,6 +33,13 @@ app.post('/',  (req, res, next) =>{
       "sales":sales
     
     });
+    console.dir({
+      "name":req.body.name,
+      "stmt":str,
+      "total":total,
+      "sales":sales
+    
+    })
     res.end();
   } if (req.headers["content-type"] == "text/plain") {
     next();
