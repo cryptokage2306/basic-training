@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[type='button']").click(function () {
+                var radioValue = $("input[name='type']:checked").val();
+                if (radioValue == "text") {
+                    var settings = {
+                        "async": true,
+                        "crossDomain": true,
+                        "url": "http://localhost:3000/",
+                        "method": "POST",
+                        "headers": {
+                            "Content-Type": "text/plain",
+                            "cache-control": "no-cache",
+                        },
+                        "data": document.getElementById('data').value
+                    }
+
+                    $.ajax(settings).done(function (response) {
+                        let str="";
+                        for(let i in response.stmt){
+                            str+=i+"<br>"
+                        }
+                        document.getElementById('data1').innerHTML=`${response.name}<br>${str}Sales:${response.sales}<br>Total:${response.total}`
+                    });
+                }
+                else {
+                    var settings = {
+                        "async": true,
+                        "crossDomain": true,
+                        "url": "http://localhost:3000/",
+                        "method": "POST",
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "cache-control": "no-cache",
+                        },
+                        "data": document.getElementById('data').value
+                    }
+
+                    $.ajax(settings).done(function (response) {
+                        let str="";
+                        for(let i of response.stmt){
+                            str+=i+"<br>"
+                        }
+                        document.getElementById('data1').innerHTML=`${response.name}<br>${str}Sales:${response.sales}<br>Total:${response.total}`
+                    });
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="radio" name="type" value="json" />json
+    <input type="radio" name="type" value="text" />text
+    <input type="text" name="data" id="data">
+    <input type="button" value="Get Value">
+    <p id='data1'></p>
+
+</body>
+
+</html>
