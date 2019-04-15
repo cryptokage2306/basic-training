@@ -21,7 +21,7 @@
 
                     $.ajax(settings).done(function (response) {
                         let str="";
-                        for(let i in response.stmt){
+                        for(let i of response.stmt){
                             str+=i+"<br>"
                         }
                         document.getElementById('data1').innerHTML=`${response.name}<br>${str}Sales:${response.sales}<br>Total:${response.total}`

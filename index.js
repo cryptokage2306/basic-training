@@ -1,5 +1,5 @@
 const express=require('express');
-const {connectionest,insert,order}=require('./sequelizeorder');
+const {connectionest,insert,order,updatereqres}=require('./sequelizeorder');
 const Sequelize = require('sequelize');
 const bodyParser=require('body-parser')
 const app = express();
@@ -25,6 +25,7 @@ app.post('/',  (req, res, next) =>{
     var str = []
     let total = 0;
     let sales = 0;
+    let reqtime=new Date().getTime();
     for (let item of array) {
       str.push(`${item.quantity} ${tax.isimported(item)} ${item.name}: ${item.price + tax.salestax(item) + tax.importtax(item)}`);
       sales += tax.salestax(item) + tax.importtax(item);
@@ -32,7 +33,6 @@ app.post('/',  (req, res, next) =>{
       total += item.price + tax.salestax(item) + tax.importtax(item);
       insert(req.body.name,item,priceall,tax.isimported(item))
     }
-    
     res.json({
       "name":req.body.name,
       "stmt":str,
@@ -47,11 +47,14 @@ app.post('/',  (req, res, next) =>{
       "sales":sales
     
     })
+    let restime=new Date().getTime();
+    updatereqres(req.body.name,`${reqtime}`,`${restime}`);
     res.end();
   } if (req.headers["content-type"] == "text/plain") {
     next();
   }
 },  (req, res) =>{
+  let reqtime=new Date().getTime();
   let str = req.body;
   orderNo = str.split(":");
   sentences = orderNo[1].split("\\n");
@@ -74,6 +77,12 @@ app.post('/',  (req, res, next) =>{
     aftertax=parseFloat(price[i-1])+text_tax.sales_tax(quantity[i-1],body[i-1],price[i-1])+text_tax.imported_tax(quantity[i-1],body[i-1],price[i-1]);
     stmt.push(`${quantity[i-1]} ${body[i-1]} ${aftertax}`);
     total+=aftertax;
+    item={
+      'name':body[i-1].split(':')[0],
+      'category':text_tax.category(body[i-1]),
+      'quantity':quantity[i-1]
+    }
+    insert(orderNo[0],item,aftertax,text_tax.imported_category(body[i-1]))
   }
   res.json({
     "name":orderNo[0],
@@ -81,6 +90,8 @@ app.post('/',  (req, res, next) =>{
     "total":total,
     "sales":sales
   });
+  let restime=new Date().getTime();
+  updatereqres(orderNo[0],`${reqtime}`,`${restime}`);
   res.end("hello");
 });
 app.listen(3000);
