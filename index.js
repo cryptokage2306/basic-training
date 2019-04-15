@@ -1,5 +1,5 @@
 const express=require('express');
-const {connectionest,insert,order,updatereqres}=require('./sequelizeorder');
+const {insert}=require('./sequelizeorder');
 const Sequelize = require('sequelize');
 const bodyParser=require('body-parser')
 const app = express();
@@ -12,9 +12,6 @@ app.get("/",  (req, res) =>{
   res.sendFile('/home/asd/myapp/index.html',  (err) =>{
     if (err) {
       console.log(err);
-    }
-    else{
-      connectionest();
     }
   });
 });
@@ -48,7 +45,6 @@ app.post('/',  (req, res, next) =>{
     
     })
     let restime=new Date().getTime();
-    updatereqres(req.body.name,`${reqtime}`,`${restime}`);
     res.end();
   } if (req.headers["content-type"] == "text/plain") {
     next();
@@ -77,6 +73,7 @@ app.post('/',  (req, res, next) =>{
     aftertax=parseFloat(price[i-1])+text_tax.sales_tax(quantity[i-1],body[i-1],price[i-1])+text_tax.imported_tax(quantity[i-1],body[i-1],price[i-1]);
     stmt.push(`${quantity[i-1]} ${body[i-1]} ${aftertax}`);
     total+=aftertax;
+    console.log(body[i-1].split(':'))
     item={
       'name':body[i-1].split(':')[0],
       'category':text_tax.category(body[i-1]),
@@ -91,7 +88,6 @@ app.post('/',  (req, res, next) =>{
     "sales":sales
   });
   let restime=new Date().getTime();
-  updatereqres(orderNo[0],`${reqtime}`,`${restime}`);
   res.end("hello");
 });
 app.listen(3000);
