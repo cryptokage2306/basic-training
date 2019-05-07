@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
-import { Todos } from './todo'
-import AddForm from './AddForm'
-import store from './store'
-import { addTodo, deleteTodo } from './action'
+import  {Todos}  from './component/Todo'
+import AddForm from './component/AddForm'
+import store from './Store'
+import { addTodo, deleteTodo } from './Action'
 class App extends Component {
   deleteTodo = (id) => {
-    const todos = this.state.todos.filter(todo => {
+    const todos = store.getState().todos.filter(todo => {
       return todo.id !== id;
     })
+    console.dir()
     store.dispatch(deleteTodo(todos))
   }
   addTodo = (todo) => {
     todo.id = Math.random();
     let todos = [...store.getState().todos, todo]
-    console.dir(todos)
-    console.dir(addTodo(todos))
     store.dispatch(addTodo(todos))
   }
   render() {
